@@ -50,13 +50,13 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
          * User Routes
          */
         Route::group(['prefix' => 'users'], function() {
-            Route::get('/', 'UsersController@index')->name('users.index');
-            Route::get('/create', 'UsersController@create')->name('users.create');
-            Route::post('/create', 'UsersController@store')->name('users.store');
-            Route::get('/{user}/show', 'UsersController@show')->name('users.show');
-            Route::get('/{user}/edit', 'UsersController@edit')->name('users.edit');
-            Route::patch('/{user}/update', 'UsersController@update')->name('users.update');
-            Route::delete('/{user}/delete', 'UsersController@destroy')->name('users.destroy');
+            Route::get('/', 'UserController@index')->name('users.index');
+            Route::get('/create', 'UserController@create')->name('users.create');
+            Route::post('/create', 'UserController@store')->name('users.store');
+            Route::get('/{user}/show', 'UserController@show')->name('users.show');
+            Route::get('/{user}/edit', 'UserController@edit')->name('users.edit');
+            Route::patch('/{user}/update', 'UserController@update')->name('users.update');
+            Route::delete('/{user}/delete', 'UserController@destroy')->name('users.destroy');
         });
 
         /**
@@ -85,7 +85,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
             Route::delete('/{post}/delete', 'VaccineController@destroy')->name('vaccines.destroy');
         });
 
-        Route::resource('roles', RolesController::class);
-        Route::resource('permissions', PermissionsController::class);
+        Route::resource('roles', RoleController::class);
+        Route::resource('permissions', PermissionController::class);
     });
 });

@@ -18,6 +18,7 @@ class RegisterController extends Controller
         return view('auth.register');
     }
 
+
     /**
      * Handle account registration request
      * 
@@ -31,6 +32,6 @@ class RegisterController extends Controller
 
         auth()->login($user);
 
-        return redirect('/')->with('success', "Account successfully registered.");
+        return redirect('/')->with('success', "Successfully Registered.");
     }
 }
